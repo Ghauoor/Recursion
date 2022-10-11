@@ -1,4 +1,4 @@
-package Examples;
+package Introduction;
 
 public class Message {
     public static void main(String[] args) {

@@ -3,7 +3,7 @@ package Questions;
 public class Trailling_Zeros_Fictorial {
     public static void main(String[] args) {
 
-        int n = 5;
+        int n = 15;
         System.out.println(tailingZeros(n));
 
     }

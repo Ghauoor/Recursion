@@ -1,4 +1,4 @@
-package Questions;
+package Questions.easy;
 
 public class Fictorial {
     public static void main(String[] args) {

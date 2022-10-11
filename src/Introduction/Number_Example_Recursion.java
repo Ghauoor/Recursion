@@ -1,4 +1,4 @@
-package Learning_Recursion;
+package Introduction;
 
 public class Number_Example_Recursion {
     public static void main(String[] args) {

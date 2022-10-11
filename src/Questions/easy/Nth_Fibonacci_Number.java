@@ -1,4 +1,4 @@
-package Questions;
+package Questions.easy;
 
 public class Nth_Fibonacci_Number {
     public static void main(String[] args) {

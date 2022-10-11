@@ -1,4 +1,4 @@
-package Examples;
+package Introduction;
 
 public class Number_Example {
     public static void main(String[] args) {
