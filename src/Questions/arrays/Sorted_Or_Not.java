@@ -12,7 +12,7 @@ public class Sorted_Or_Not {
         if (index ==  arr.length-1){
             return true;
         }
-
+        //RC
         return arr[index] < arr[index + 1] && sorted(arr, index+1);
     }
 }
