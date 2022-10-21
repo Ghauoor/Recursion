@@ -9,11 +9,6 @@ public class Merge_Sort {
         arr = mergeSort(arr);
         System.out.println(Arrays.toString(arr));
 
-        int [] arr1 = {2,3,4,5};
-        int [] arr2 = {2,6,44,3,2};
-
-        System.out.println(Arrays.toString(merge(arr1,arr2)));
-
     }
 
     static int[] mergeSort(int[] arr) {
