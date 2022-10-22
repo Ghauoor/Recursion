@@ -5,10 +5,10 @@ import java.util.Arrays;
 
 public class MergeSort_InPlace {
     public static void main(String[] args) {
-        int[] arr = {5, 4, 3, 2, 1};
+        int[] arr = {9, 4, 7, 6, 3, 1, 5};
         // mergeSortInPlace(arr, 0, arr.length);
         // System.out.println(Arrays.toString(arr));
-        sort(arr, 0, arr.length - 1);
+        sorting(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
 
     }
@@ -93,7 +93,6 @@ public class MergeSort_InPlace {
         }
 
         // Merging
-
         int i = 0, j = 0;
         int k = left;
 
@@ -121,6 +120,58 @@ public class MergeSort_InPlace {
             k++;
         }
 
+    }
 
+    static void sorting(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            sort(arr, left, mid);
+            sort(arr, mid + 1, right);
+
+            mergeTheArrays(arr, left, mid, right);
+        }
+    }
+
+    private static void mergeTheArrays(int[] arr, int left, int mid, int right) {
+
+        //pointers
+        int i = left;
+        int j = mid+1;
+        int k = left;
+
+        //Array
+        int[] mix = new int[arr.length];
+
+        //merging
+        while (i <= mid && j <= right){
+            if (arr[i] < arr[j]){
+                mix[k] = arr[i];
+                i++;
+            } else {
+                mix[k] = arr[j];
+                j++;
+            }
+            k++;
+        }
+
+        //Edge
+        if (i > mid){
+            while (j <= right){
+                mix[k] = arr[j];
+                j++;
+                k++;
+            }
+        } else {
+            while (i <= mid){
+                mix[k] = arr[i];
+                i++;
+                k++;
+            }
+        }
+
+        //copy the array
+        for (k = left; k <= right; k++){
+            arr[k] = mix[k];
+        }
     }
 }
