@@ -7,6 +7,7 @@ public class Skip_A_Character {
 
         System.out.println(skip("baccad"));
 
+        System.out.println(skipString("appledkjns"));
 
     }
     static void skipChar(String processed, String unProcessed){
@@ -34,6 +35,17 @@ public class Skip_A_Character {
            return skip(unProcessed.substring(1));
         } else {
            return ch + skip(unProcessed.substring(1));
+        }
+    }
+    static String skipString( String unProcessed){
+        if (unProcessed.isEmpty()){
+            return "";
+        }
+
+        if (unProcessed.startsWith("apple")){
+            return skipString(unProcessed.substring(5));
+        } else {
+            return unProcessed.charAt(0) + skip(unProcessed.substring(1));
         }
     }
 }
