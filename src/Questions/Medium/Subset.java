@@ -21,11 +21,11 @@ public class Subset {
 
         result.add(new ArrayList<>());
 
-        for(int i = 0; i < nums.length; i++){
+        for (int num : nums) {
 
             for (int j = 0, size = result.size(); j < size; j++) {
                 List<Integer> subset = new ArrayList<>(result.get(j));
-                subset.add(nums[i]);
+                subset.add(num);
                 result.add(subset);
             }
         }
