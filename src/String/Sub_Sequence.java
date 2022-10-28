@@ -7,6 +7,11 @@ public class Sub_Sequence {
         subSeq("", "gh");
         System.out.println();
         System.out.println(subSeqArrayList("", "gh"));
+        System.out.println();
+        subSeqWithASCII("", "gh");
+        System.out.println();
+        System.out.println(subSeqArrayListASCII("", "gh"));
+
 
     }
 
@@ -36,5 +41,40 @@ public class Sub_Sequence {
 
         left.addAll(right);
         return left;
+    }
+
+    //Subseq with ASCII value
+    static void subSeqWithASCII(String processed, String unProcessed) {
+        if (unProcessed.isEmpty()) {
+            System.out.print(processed + " ");
+            return;
+        }
+
+        char ch = unProcessed.charAt(0);
+
+        subSeqWithASCII(processed + ch, unProcessed.substring(1));
+        subSeqWithASCII(processed, unProcessed.substring(1));
+        subSeqWithASCII(processed + (ch + 0), unProcessed.substring(1));
+    }
+
+    //ASCII return with ArrayList
+
+    static ArrayList<String> subSeqArrayListASCII(String processed, String unProcessed) {
+        if (unProcessed.isEmpty()) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(processed);
+            return list;
+        }
+
+        char ch = unProcessed.charAt(0);
+
+        ArrayList<String> first = subSeqArrayListASCII(processed + ch, unProcessed.substring(1));
+        ArrayList<String> second = subSeqArrayListASCII(processed, unProcessed.substring(1));
+        ArrayList<String> third = subSeqArrayListASCII(processed + (ch + 0), unProcessed.substring(1));
+
+
+        first.addAll(second);
+        first.addAll(third);
+        return first;
     }
 }
