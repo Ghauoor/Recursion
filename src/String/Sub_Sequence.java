@@ -1,6 +1,8 @@
 package String;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Sub_Sequence {
     public static void main(String[] args) {
@@ -11,6 +13,9 @@ public class Sub_Sequence {
         subSeqWithASCII("", "gh");
         System.out.println();
         System.out.println(subSeqArrayListASCII("", "gh"));
+        System.out.println();
+
+        subseqItrativly("gh", 2);
 
 
     }
@@ -77,4 +82,14 @@ public class Sub_Sequence {
         first.addAll(third);
         return first;
     }
+
+
+    static void subseqItrativly(String str, int n){
+        for (int i = 0; i < n; i++){
+            for (int j = i+1; j <= n; j++){
+                System.out.println(str.substring(i,j));
+            }
+        }
+    }
+
 }
