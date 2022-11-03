@@ -1,14 +1,22 @@
 package String;
 
+import java.util.ArrayList;
+
 public class Permutation {
     public static void main(String[] args) {
-        String str = "GHAYooR";
+        String str = "abc";
+        String processed = "";
         int left = 0;
         int right = str.length();
 
+
+        ArrayList<String> ans = permutationReturnArrayList(processed, str);
+
+        System.out.println(ans);
+
         permute(str, left, right);
 
-        permutation("", str);
+        permutation(processed, str);
 
     }
 
@@ -28,9 +36,30 @@ public class Permutation {
             String s = processed.substring(i, processed.length());
 
             permutation(f + ch + s, unProcessed.substring(1));
-
-
         }
+    }
+
+    // Return the Value in a ArrayList
+    static ArrayList<String> permutationReturnArrayList(String processed, String unProcessed) {
+        if (unProcessed.isEmpty()) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(processed);
+            return list;
+        }
+
+        char ch = unProcessed.charAt(0);
+
+        ArrayList<String> ans = new ArrayList<>();
+
+        for (int i = 0; i <= processed.length(); i++) {
+
+            String f = processed.substring(0, i);
+            String s = processed.substring(i, processed.length());
+
+            ans.addAll(permutationReturnArrayList(f + ch + s, unProcessed.substring(1)));
+        }
+
+        return ans;
     }
 
     static void permute(String str, int left, int right) {
