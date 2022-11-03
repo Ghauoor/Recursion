@@ -8,6 +8,29 @@ public class Permutation {
 
         permute(str, left, right);
 
+        permutation("", str);
+
+    }
+
+    //Using processed and unProcessed String Concept
+
+    static void permutation(String processed, String unProcessed) {
+        if (unProcessed.isEmpty()) {
+            System.out.println(processed);
+            return;
+        }
+
+        char ch = unProcessed.charAt(0);
+
+        for (int i = 0; i <= processed.length(); i++) {
+
+            String f = processed.substring(0, i);
+            String s = processed.substring(i, processed.length());
+
+            permutation(f + ch + s, unProcessed.substring(1));
+
+
+        }
     }
 
     static void permute(String str, int left, int right) {
