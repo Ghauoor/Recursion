@@ -18,6 +18,8 @@ public class Permutation {
 
         permutation(processed, str);
 
+        System.out.println(permutationsCount(processed, str));
+
     }
 
     //Using processed and unProcessed String Concept
@@ -62,6 +64,9 @@ public class Permutation {
         return ans;
     }
 
+
+    //Check Permutations with two Pointers and BackTracking
+
     static void permute(String str, int left, int right) {
 
         if (left == right) {
@@ -89,5 +94,28 @@ public class Permutation {
         stringBuffer.setCharAt(right, str.charAt(left));
 
         return stringBuffer.toString();
+    }
+
+
+    //Count Number of Permutations
+
+    static int permutationsCount(String processed, String unProcessed) {
+        if (unProcessed.isEmpty()) {
+            System.out.println(processed);
+            return 1;
+        }
+
+        char ch = unProcessed.charAt(0);
+
+        int count = 0;
+
+        for (int i = 0; i <= processed.length(); i++) {
+
+            String f = processed.substring(0, i);
+            String s = processed.substring(i, processed.length());
+
+            count = count + permutationsCount(f + ch + s, unProcessed.substring(1));
+        }
+        return count;
     }
 }
