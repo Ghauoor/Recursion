@@ -8,6 +8,8 @@ public class Dice {
 
         System.out.println(diceCombinationsReturnArrayList("", 4));
 
+        diceFace("", 5,8);
+
     }
     static void diceCombinations(String pro, int target){
         if (target == 0){
@@ -18,6 +20,20 @@ public class Dice {
         for (int i = 1; i < 6 && i <= target; i++) {
 
             diceCombinations(pro + i, target - i);
+        }
+    }
+
+    // if the no of diceface is change
+
+    static void diceFace(String pro, int target, int face){
+        if (target == 0){
+            System.out.println(pro);
+            return;
+        }
+
+        for (int i = 1; i < face && i <= target; i++) {
+
+            diceFace(pro + i, target - i, face);
         }
     }
 
