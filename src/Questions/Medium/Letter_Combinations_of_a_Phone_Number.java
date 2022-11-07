@@ -9,7 +9,7 @@ public class Letter_Combinations_of_a_Phone_Number {
         pad("", "1");
         System.out.println(padReturnArrayList("", "1"));
 
-        System.out.println(padCount("","1"));
+        System.out.println(padCount("", "1"));
 
         System.out.println(letterCombinations("2"));
     }
@@ -64,7 +64,7 @@ public class Letter_Combinations_of_a_Phone_Number {
 
             return 1;
         }
-        
+
         int count = 0;
 
         //convert '2' to 2
@@ -88,13 +88,13 @@ public class Letter_Combinations_of_a_Phone_Number {
         String[] mapping = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
         letterCombinationsHelper(digits, output, index, mapping, ans);
-        return  ans;
+        return ans;
     }
 
     private static void letterCombinationsHelper(String digits, StringBuilder output, int index,
                                                  String[] mapping, ArrayList<String> ans) {
 
-        if (index >= digits.length()){
+        if (index >= digits.length()) {
             ans.add(output.toString());
             return;
         }
@@ -102,7 +102,7 @@ public class Letter_Combinations_of_a_Phone_Number {
         int num = digits.charAt(index) - '0';
         String value = mapping[num];
 
-        for (int i = 0; i < value.length(); i++){
+        for (int i = 0; i < value.length(); i++) {
 
             output.append(value.charAt(i));
 
