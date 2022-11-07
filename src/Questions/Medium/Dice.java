@@ -8,11 +8,12 @@ public class Dice {
 
         System.out.println(diceCombinationsReturnArrayList("", 4));
 
-        diceFace("", 5,8);
+        diceFace("", 5, 8);
 
     }
-    static void diceCombinations(String pro, int target){
-        if (target == 0){
+
+    static void diceCombinations(String pro, int target) {
+        if (target == 0) {
             System.out.println(pro);
             return;
         }
@@ -25,8 +26,8 @@ public class Dice {
 
     // if the no of diceface is change
 
-    static void diceFace(String pro, int target, int face){
-        if (target == 0){
+    static void diceFace(String pro, int target, int face) {
+        if (target == 0) {
             System.out.println(pro);
             return;
         }
@@ -37,14 +38,14 @@ public class Dice {
         }
     }
 
-    static ArrayList<String> diceCombinationsReturnArrayList(String pro, int target){
-        if (target == 0){
+    static ArrayList<String> diceCombinationsReturnArrayList(String pro, int target) {
+        if (target == 0) {
             ArrayList<String> list = new ArrayList<>();
             list.add(pro);
             return list;
         }
 
-        ArrayList<String > ans = new ArrayList<>();
+        ArrayList<String> ans = new ArrayList<>();
 
         for (int i = 1; i < 6 && i <= target; i++) {
 
