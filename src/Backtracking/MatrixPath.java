@@ -101,7 +101,6 @@ class MatrixPath {
             return;
         }
 
-        ArrayList<String> list = new ArrayList<>();
 
         if (!maze[r][c])
             return;
@@ -115,5 +114,7 @@ class MatrixPath {
         }
 
     }
+
+
 
 }
