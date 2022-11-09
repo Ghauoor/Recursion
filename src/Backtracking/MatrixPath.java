@@ -9,6 +9,13 @@ class MatrixPath {
         System.out.println(pathReturn("", 3, 3));
         System.out.println(pathReturnDiagonal("", 3, 3));
 
+        boolean[][] maze = {
+                {true, true, true},
+                {true, false, true},
+                {true, true, true}
+        };
+
+        pathWithRestrictions("",maze, 0,0);
     }
 
     static int count(int r, int c) {
@@ -84,5 +91,29 @@ class MatrixPath {
         return ans;
     }
 
+
+    // Path with Obstacles
+    static void pathWithRestrictions(String p,boolean[][] maze, int r, int c) {
+
+        if (r == maze.length - 1 && c == maze[0].length - 1) {
+
+            System.out.println(p);
+            return;
+        }
+
+        ArrayList<String> list = new ArrayList<>();
+
+        if (!maze[r][c])
+            return;
+
+        if (r < maze.length - 1) {
+           pathWithRestrictions(p + 'D',maze ,r + 1, c );
+        }
+
+        if (c < maze[0].length - 1) {
+            pathWithRestrictions(p + 'R', maze,r, c + 1);
+        }
+
+    }
 
 }
