@@ -24,7 +24,7 @@ public class Dice {
         }
     }
 
-    // if the no of diceface is change
+    // if the no of dice-face is change
 
     static void diceFace(String pro, int target, int face) {
         if (target == 0) {
