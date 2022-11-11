@@ -8,12 +8,12 @@ public class Array_Sum {
         System.out.println(arraySum(arr,arr.length));
 
     }
-    static int arraySum(int[] arr, int index){
-        if(index <= 0){
+    static int arraySum(int[] arr, int n){
+        if(n <= 0){
             return 0;
         }
 
-        return (arraySum(arr, index-1)+arr[index-1]);
+        return (arraySum(arr, n-1)+arr[n-1]);
     }
 
 
