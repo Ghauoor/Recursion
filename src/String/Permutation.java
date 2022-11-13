@@ -65,7 +65,7 @@ public class Permutation {
     }
 
 
-    //Check Permutations with two Pointers and BackTracking
+    //Check Permutation with two Pointers and BackTracking
 
     static void permute(String str, int left, int right) {
 
@@ -98,7 +98,7 @@ public class Permutation {
     }
 
 
-    //Count Number of Permutations
+    //Count Number of Permutation
 
     static int permutationsCount(String processed, String unProcessed) {
         if (unProcessed.isEmpty()) {
