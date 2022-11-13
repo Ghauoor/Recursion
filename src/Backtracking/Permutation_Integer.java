@@ -3,7 +3,7 @@ package Backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Permutations {
+public class Permutation_Integer {
     public List<List<Integer>> permute(int[] nums) {
 
         List<List<Integer>> ans = new ArrayList<>();
@@ -20,9 +20,9 @@ public class Permutations {
 
             List<Integer> temp = new ArrayList<>();
 
-            for (int i = 0; i < nums.length; i++) {
+            for (int num : nums) {
 
-                temp.add(nums[i]);
+                temp.add(num);
             }
             ans.add(temp);
             return;
