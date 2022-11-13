@@ -86,14 +86,15 @@ public class Permutation {
 
     }
 
+
     private static String swap(String str, int left, int right) {
 
-        StringBuffer stringBuffer = new StringBuffer(str);
+        StringBuffer strBuffer = new StringBuffer(str);
 
-        stringBuffer.setCharAt(left, str.charAt(right));
-        stringBuffer.setCharAt(right, str.charAt(left));
+        strBuffer.setCharAt(left, str.charAt(right));
+        strBuffer.setCharAt(right, str.charAt(left));
 
-        return stringBuffer.toString();
+        return strBuffer.toString();
     }
 
 
