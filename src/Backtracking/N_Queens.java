@@ -61,7 +61,7 @@ public class N_Queens {
             }
 
         }
-        //If non of the checks is true then place the queen
+        //If none of the checks is true then place the queen
         return true;
     }
 
