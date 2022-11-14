@@ -4,9 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NQueens {
+    public static void main(String[] args) {
+        int n = 4;
+        System.out.println(solveNQueens(n));
 
+    }
     //Submit to leetcode
-    public boolean isSafe(int row, int col, char[][] board) {
+
+    public static List<List<String>> solveNQueens(int n) {
+        List<List<String>> allBoards = new ArrayList<>();
+        char[][] board = new char[n][n];
+
+        helper(board, allBoards, 0);
+        return allBoards;
+    }
+
+    public static boolean isSafe(int row, int col, char[][] board) {
         //horizontal
         for (int j = 0; j < board.length; j++) {
             if (board[row][j] == 'Q') {
@@ -56,23 +69,23 @@ public class NQueens {
         return true;
     }
 
-    public void saveBoard(char[][] board, List<List<String>> allBoards) {
-        String row = "";
+    public static void saveBoard(char[][] board, List<List<String>> allBoards) {
+        StringBuilder row = new StringBuilder();
         List<String> newBoard = new ArrayList<>();
 
-        for (int i = 0; i < board.length; i++) {
-            row = "";
+        for (char[] chars : board) {
+            row = new StringBuilder();
             for (int j = 0; j < board[0].length; j++) {
-                if (board[i][j] == 'Q') row += 'Q';
-                else row += '.';
+                if (chars[j] == 'Q') row.append('Q');
+                else row.append('.');
             }
-            newBoard.add(row);
+            newBoard.add(row.toString());
         }
 
         allBoards.add(newBoard);
     }
 
-    public void helper(char[][] board, List<List<String>> allBoards, int col) {
+    public static void helper(char[][] board, List<List<String>> allBoards, int col) {
         if (col == board.length) {
             saveBoard(board, allBoards);
             return;
@@ -85,14 +98,6 @@ public class NQueens {
                 board[row][col] = '.';
             }
         }
-    }
-
-    public List<List<String>> solveNQueens(int n) {
-        List<List<String>> allBoards = new ArrayList<>();
-        char[][] board = new char[n][n];
-
-        helper(board, allBoards, 0);
-        return allBoards;
     }
 }
 
